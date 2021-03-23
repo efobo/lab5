@@ -15,7 +15,7 @@ public class Location {
     }
 
     /**
-     * Получить координату х локации
+     * Получить координату х локации bb
      * @return x
      */
     public Float getX () {return x;}
