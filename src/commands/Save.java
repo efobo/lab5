@@ -22,6 +22,7 @@ private CollectionManager collectionManager;
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
             collectionManager.saveCollection();
+            System.out.println("Сохранено!");
             return true;
         } catch (WrongAmountOfElementsException exception) {
             System.out.println("Использование: '" + getName() + "'");

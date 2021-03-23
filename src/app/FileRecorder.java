@@ -150,7 +150,6 @@ public class FileRecorder {
 
         text = text + "\t</Labwork>\n" +
                 "</project>";
-        System.out.println(text);
         try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file))) {
             byte [] buffer = text.getBytes();
             bos.write(buffer, 0, buffer.length);
