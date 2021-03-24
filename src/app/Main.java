@@ -22,7 +22,7 @@ public class Main {
             while (flag) {
                 System.out.println("Введите название файла");
                 System.out.print("> ");
-                inputReader = new BufferedReader(new InputStreamReader(System.in)); //?? Нужно ли
+                inputReader = new BufferedReader(new InputStreamReader(System.in));
                 f = inputReader.readLine();
                 if (f.equals("")) {
                     System.out.println("Необходимо ввести имя файла");

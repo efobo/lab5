@@ -178,6 +178,7 @@ public class CollectionManager {
         Iterator<Labwork> descendingIterator = labworks.descendingIterator();
         for (int l = labworks.size(); l>0; l--) {
             String element = descendingIterator.next().toString();
+            System.out.println(element);
         }
     }
 

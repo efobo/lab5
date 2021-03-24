@@ -135,7 +135,6 @@ public class Output {
             do {
                 userCommand = (line.trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
-                //на случай пустых строк в файле, как я поняла
                 while (line != null && userCommand[0].isEmpty()) {
                     line = scriptReader.readLine();
                     userCommand = (line.trim() + " ").split(" ", 2);
