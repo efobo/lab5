@@ -6,7 +6,6 @@ import Exceptions.WrongAmountOfElementsException;
 import app.CollectionManager;
 import data.Labwork;
 
-import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Класс команды remove_by_id
