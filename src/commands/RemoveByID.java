@@ -6,6 +6,8 @@ import Exceptions.WrongAmountOfElementsException;
 import app.CollectionManager;
 import data.Labwork;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 /**
  * Класс команды remove_by_id
  */
@@ -39,6 +41,9 @@ public class RemoveByID extends ACommand{
             System.out.println("Пустая коллекция");
         }catch (LabworkNotFoundException e) {
             System.out.println("Элемента с таким id нет");
+        } catch (NumberFormatException e) {
+            System.out.println("Аргумент должен быть числом");
+
         }
         return false;
     }

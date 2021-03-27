@@ -52,6 +52,8 @@ public class Update extends ACommand {
             System.out.println("Элемента с таким id нет");
         } catch (IncorrectScriptException e) {
             System.out.println("Неправильно написан скрипт");
+        } catch (NumberFormatException e) {
+            System.out.println("Аргумент должен быть числом");
         }
         return false;
     }
