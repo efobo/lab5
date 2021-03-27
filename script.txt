@@ -1,2 +1,15 @@
-show
-
+remove_greater
+Halk
+540
+540
+12
+HOPELESS
+yes
+Alla
+2000-12-11
+GREEN
+RED
+YES
+540
+540
+LegoCity

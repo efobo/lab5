@@ -101,7 +101,16 @@ public class Person {
         this.location = location;
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj instanceof Person) {
+            Person personObj = (Person) obj;
+            return name.equals(personObj.getName()) && birthday.equals(personObj.getBirthday()) && (eyeColor == personObj.getEyeColor()) && (hairColor == personObj.getHairColor()) && location.equals(personObj.getLocation());
+        //
+        }
+        return false;
+    }
     @Override
     public String toString() {
         String info = "\nИмя: " + name ;

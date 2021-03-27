@@ -31,3 +31,4 @@ public class Clear extends ACommand {
         return false;
     }
 }
+

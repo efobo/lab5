@@ -56,7 +56,15 @@ public class Location {
         this.name = name;
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj instanceof Location) {
+            Location locationObj = (Location) obj;
+            return name.equals(locationObj.getName()) && x.equals(locationObj.getX()) && y.equals(locationObj.getY());
+        }
+        return false;
+    }
     @Override
     public String toString() {
         String info = "x: " + x + " y: " + y;

@@ -51,7 +51,6 @@ public class Coordinates {
         return x.hashCode() + (int) y;
     }
 
-    // Разобраться с этим говном
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;

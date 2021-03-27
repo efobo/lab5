@@ -17,7 +17,7 @@ import java.util.TreeSet;
  */
 public class FileRecorder {
     private TreeSet <Labwork> labworks = new TreeSet<Labwork>();
-
+    public boolean check = true;
     public FileRecorder (TreeSet <Labwork> labworks) {
         this.labworks = labworks;
     }
@@ -32,7 +32,6 @@ public class FileRecorder {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(file);
-            // Получение списка всех элементов labwork внутри корневого элемента (getDocumentElement возвращает ROOT элемент XML файла).
             NodeList labworksElements = document.getDocumentElement().getElementsByTagName("labwork");
 
             for (int i = 0; i < labworksElements.getLength(); i++) {
@@ -100,13 +99,15 @@ public class FileRecorder {
 
         } catch (IOException e) {
             System.out.println("Неверно введено имя файла");
-            e.printStackTrace();
+            check = false;
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            check = false;
+            System.out.println("Ошибка парсера");
         } catch (IllegalArgumentException e) {
+            check = false;
             System.out.println("Неправильно введены данные в файле");
-            e.printStackTrace();
         } catch (SAXException e) {
+            check = false;
             System.out.println("Неправильно заполнен файл");
         }
     }

@@ -157,8 +157,8 @@ public class Labwork implements Comparable<Labwork> {
         if (this == obj) return true;
         if (obj instanceof Labwork) {
             Labwork labObj = (Labwork) obj;
-            return name.equals(labObj.getName()) && coordinates.equals(labObj.getCoordinates()) &&
-                    (difficulty == labObj.getDifficulty()) && (author == labObj.getAuthor());
+            return name.equals(labObj.getName()) && coordinates.equals(labObj.getCoordinates()) && (minimalPoint == labObj.getMinimalPoint()) &&
+                    (difficulty == labObj.getDifficulty()) && author.equals(labObj.getAuthor());
         }
         return false;
     }

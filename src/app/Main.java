@@ -2,6 +2,8 @@ package app;
 
 import commands.*;
 import data.*;
+import org.xml.sax.SAXException;
+
 import java.io.*;
 import java.util.TreeSet;
 
@@ -14,6 +16,8 @@ public class Main {
 
 
     public static void main (String[] args) {
+        CollectionManager collectionManager = null;
+        FileRecorder fileRecorder;
         try {
             BufferedReader inputReader = null;
             String f;
@@ -34,13 +38,18 @@ public class Main {
                 } else {
                     if (file.length() == 0) {
                         System.out.println("Вы ввели название пустого файла");
-                    } else flag = false;
+                    } else {
+                        collectionManager = new CollectionManager(labworks, file);
+                        fileRecorder = new FileRecorder(collectionManager.getCollection());
+                        fileRecorder.makeTreeSetFromFile(file);
+                        if (fileRecorder.check) {
+                            flag = false;
+                        }
+                    }
+
                 }
             }
             Asker asker = new Asker(labworks, inputReader);
-            CollectionManager collectionManager = new CollectionManager(labworks, file);
-            FileRecorder fileRecorder = new FileRecorder(collectionManager.getCollection());
-            fileRecorder.makeTreeSetFromFile(file);
             CommandManager commandManager = new CommandManager(new Add(collectionManager, asker),
                     new AddIfMin(collectionManager, asker),
                     new Clear(collectionManager), new ExecuteScript(),
